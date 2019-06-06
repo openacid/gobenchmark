@@ -13,10 +13,6 @@
 # gobenchmark
 A collection of benchmarks of basic operation, as a guide for tuning.
 
-[![Travis-CI](https://api.travis-ci.org/openacid/low.svg?branch=master)](https://travis-ci.org/openacid/low)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/1jnttodaenbrv3va/branch/master?svg=true)](https://ci.appveyor.com/project/drmingdrmer/low/branch/master)
-
-
 When digging deeper and deeper into performance tuning, we found the performance
 of some basic operations varies widely, in a counter-intuitive way.
 These differences are critical and does impact performance.
@@ -53,18 +49,18 @@ goarch: amd64
 pkg: github.com/openacid/gobenchmark
 BenchmarkInt64_Multi_ByConst_Assign-8        	1000000000	         0.40 ns/op
 BenchmarkInt64_Multi_ByVar_Assign-8          	1000000000	         0.42 ns/op
-BenchmarkInt64_ShiftLeft_ByConst_Assign-8    	1000000000	         0.37 ns/op
-BenchmarkInt64_ShiftLeft_ByVar_Assign-8      	1000000000	         0.94 ns/op
-BenchmarkInt64_ShiftRight_ByConst_Assign-8   	1000000000	         0.36 ns/op
-BenchmarkInt64_ShiftRight_ByVar_Assign-8     	1000000000	         1.44 ns/op
-BenchmarkInt64_Div_ByConst_Assign-8          	1000000000	         0.92 ns/op
-BenchmarkInt64_Div_ByVar_Assign-8            	100000000	         8.60 ns/op
-BenchmarkInt64_Mod_ByConst_Assign-8          	1000000000	         1.04 ns/op
-BenchmarkInt64_Mod_ByVar_Assign-8            	100000000	         8.13 ns/op
+BenchmarkInt64_ShiftLeft_ByConst_Assign-8    	1000000000	         0.36 ns/op
+BenchmarkInt64_ShiftLeft_ByVar_Assign-8      	1000000000	         0.98 ns/op
+BenchmarkInt64_ShiftRight_ByConst_Assign-8   	1000000000	         0.37 ns/op
+BenchmarkInt64_ShiftRight_ByVar_Assign-8     	1000000000	         1.53 ns/op
+BenchmarkInt64_Div_ByConst_Assign-8          	1000000000	         0.95 ns/op
+BenchmarkInt64_Div_ByVar_Assign-8            	100000000	         8.37 ns/op
+BenchmarkInt64_Mod_ByConst_Assign-8          	1000000000	         1.07 ns/op
+BenchmarkInt64_Mod_ByVar_Assign-8            	100000000	         8.18 ns/op
 BenchmarkInt64_Assign-8                      	1000000000	         0.26 ns/op
 BenchmarkFloat64_Multi_Assign-8              	1000000000	         0.78 ns/op
-BenchmarkFloat64_ToInt64_Assign-8            	1000000000	         0.52 ns/op
+BenchmarkFloat64_ToInt64_Assign-8            	1000000000	         0.53 ns/op
 BenchmarkFloat64_Assign-8                    	1000000000	         0.78 ns/op
 PASS
-ok  	github.com/openacid/gobenchmark	10.792s
+ok  	github.com/openacid/gobenchmark	10.982s
 ```
