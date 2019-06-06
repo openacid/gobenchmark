@@ -13,6 +13,38 @@ var Inp1U uint = 5
 var Inp1Float64 float64 = 1.23456789
 var Inp2Float64 float64 = 1.23456789
 
+func BenchmarkInt64_Add_ByConst_Assign(b *testing.B) {
+	var s int64
+	for i := 0; i < b.N; i++ {
+		s += Inp1I64 + 87
+	}
+	Output = int(s)
+}
+
+func BenchmarkInt64_Add_ByVar_Assign(b *testing.B) {
+	var s int64
+	for i := 0; i < b.N; i++ {
+		s += Inp1I64 + Inp2I64
+	}
+	Output = int(s)
+}
+
+func BenchmarkInt64_Sub_ByConst_Assign(b *testing.B) {
+	var s int64
+	for i := 0; i < b.N; i++ {
+		s += Inp1I64 - 87
+	}
+	Output = int(s)
+}
+
+func BenchmarkInt64_Sub_ByVar_Assign(b *testing.B) {
+	var s int64
+	for i := 0; i < b.N; i++ {
+		s += Inp1I64 - Inp2I64
+	}
+	Output = int(s)
+}
+
 func BenchmarkInt64_Multi_ByConst_Assign(b *testing.B) {
 	var s int64
 	for i := 0; i < b.N; i++ {

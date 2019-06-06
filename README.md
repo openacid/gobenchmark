@@ -47,21 +47,25 @@ make ben # run the benchmark
 goos: darwin
 goarch: amd64
 pkg: github.com/openacid/gobenchmark
-BenchmarkInt64_Multi_ByConst_Assign-8        	1000000000	         0.41 ns/op
+BenchmarkInt64_Add_ByConst_Assign-8          	1000000000	         0.53 ns/op
+BenchmarkInt64_Add_ByVar_Assign-8            	1000000000	         0.39 ns/op
+BenchmarkInt64_Sub_ByConst_Assign-8          	1000000000	         0.52 ns/op
+BenchmarkInt64_Sub_ByVar_Assign-8            	1000000000	         0.39 ns/op
+BenchmarkInt64_Multi_ByConst_Assign-8        	1000000000	         0.40 ns/op
 BenchmarkInt64_Multi_ByVar_Assign-8          	1000000000	         0.42 ns/op
-BenchmarkInt64_ShiftLeft_ByConst_Assign-8    	1000000000	         0.40 ns/op
-BenchmarkInt64_ShiftLeft_ByVar_Assign-8      	1000000000	         0.96 ns/op
-BenchmarkInt64_ShiftRight_ByConst_Assign-8   	1000000000	         0.38 ns/op
-BenchmarkInt64_ShiftRight_ByVar_Assign-8     	1000000000	         1.51 ns/op
+BenchmarkInt64_ShiftLeft_ByConst_Assign-8    	1000000000	         0.36 ns/op
+BenchmarkInt64_ShiftLeft_ByVar_Assign-8      	1000000000	         0.93 ns/op
+BenchmarkInt64_ShiftRight_ByConst_Assign-8   	1000000000	         0.36 ns/op
+BenchmarkInt64_ShiftRight_ByVar_Assign-8     	1000000000	         1.43 ns/op
 BenchmarkInt64_Div_ByConst_Assign-8          	1000000000	         0.92 ns/op
-BenchmarkInt64_Div_ByVar_Assign-8            	100000000	         8.46 ns/op
-BenchmarkInt64_Mod_ByConst_Assign-8          	1000000000	         1.12 ns/op
-BenchmarkInt64_Mod_ByVar_Assign-8            	100000000	         8.18 ns/op
-BenchmarkInt64_Assign-8                      	1000000000	         0.31 ns/op
-BenchmarkFloat64_Multi_ByConst_Assign-8      	1000000000	         0.87 ns/op
-BenchmarkFloat64_Multi_ByVar_Assign-8        	1000000000	         0.79 ns/op
-BenchmarkFloat64_ToInt64_Assign-8            	1000000000	         0.54 ns/op
-BenchmarkFloat64_Assign-8                    	1000000000	         0.78 ns/op
+BenchmarkInt64_Div_ByVar_Assign-8            	100000000	         8.28 ns/op
+BenchmarkInt64_Mod_ByConst_Assign-8          	1000000000	         1.06 ns/op
+BenchmarkInt64_Mod_ByVar_Assign-8            	100000000	         8.14 ns/op
+BenchmarkInt64_Assign-8                      	1000000000	         0.26 ns/op
+BenchmarkFloat64_Multi_ByConst_Assign-8      	1000000000	         0.79 ns/op
+BenchmarkFloat64_Multi_ByVar_Assign-8        	1000000000	         0.78 ns/op
+BenchmarkFloat64_ToInt64_Assign-8            	1000000000	         0.53 ns/op
+BenchmarkFloat64_Assign-8                    	1000000000	         0.79 ns/op
 PASS
-ok  	github.com/openacid/gobenchmark	12.091s
+ok  	github.com/openacid/gobenchmark	13.678s
 ```
