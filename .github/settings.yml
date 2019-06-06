@@ -1,0 +1,8 @@
+_extends: gh-config
+
+
+repository:
+  name: gobenchmark
+  description: A collection of benchmarks of basic operation, as a guide for tuning.
+  # homepage: https://openacid.github.io/
+  topics: go, golang, benchmark
