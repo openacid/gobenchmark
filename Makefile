@@ -56,12 +56,12 @@ gofmt:
 	@test -z "$(shell gofmt -s -l -d -e $(GOFILES) | tee /dev/stderr)"
 
 ben: test
-	$(GO) test ./... -run=none -bench=. -benchmem
+	$(GO) test -run=none -bench=. -benchtime 0.5s > benchmark.txt
 
 gen:
 	$(GO) generate ./...
 
-readme:
+readme: ben
 	python ./scripts/build_readme.py
 	# brew install nodejs
 	# npm install -g doctoc
