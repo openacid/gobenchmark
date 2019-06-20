@@ -6,6 +6,7 @@
 - [What it is NOT](#what-it-is-not)
 - [Use it](#use-it)
 - [Install](#install)
+- [Tips for tuning](#tips-for-tuning)
 - [Pre-built benchmarks](#pre-built-benchmarks)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -40,6 +41,20 @@ go get github.com/openacid/gobenchmark
 make ben # run the benchmark
 ```
 
+# Tips for tuning
+
+According to the benchmark, there are some general tips for tuning computation
+dense programs:
+
+-   Usually using static data is faster:
+    -   **Most of the time**, operating on a const is faster than on a variable.
+    -   Using array is (about 2 times) faster than using a slice.
+
+-   Integer are faster than float number.
+
+-   Usually `/` and `%` are very slow. Use shift if possible.
+
+
 
 # Pre-built benchmarks
 
@@ -48,30 +63,32 @@ goos: darwin
 goarch: amd64
 pkg: github.com/openacid/gobenchmark
 BenchmarkInt64_And_ByConst_Assign-8          	1000000000	         0.35 ns/op
-BenchmarkInt64_And_ByVar_Assign-8            	1000000000	         0.39 ns/op
+BenchmarkInt64_And_ByVar_Assign-8            	1000000000	         0.40 ns/op
 BenchmarkInt64_Or_ByConst_Assign-8           	1000000000	         0.35 ns/op
 BenchmarkInt64_Or_ByVar_Assign-8             	1000000000	         0.39 ns/op
 BenchmarkInt64_Xor_ByConst_Assign-8          	1000000000	         0.35 ns/op
-BenchmarkInt64_Xor_ByVar_Assign-8            	1000000000	         0.39 ns/op
-BenchmarkInt64_Add_ByConst_Assign-8          	1000000000	         0.52 ns/op
-BenchmarkInt64_Add_ByVar_Assign-8            	1000000000	         0.39 ns/op
-BenchmarkInt64_Sub_ByConst_Assign-8          	1000000000	         0.52 ns/op
-BenchmarkInt64_Sub_ByVar_Assign-8            	1000000000	         0.39 ns/op
+BenchmarkInt64_Xor_ByVar_Assign-8            	1000000000	         0.40 ns/op
+BenchmarkInt64_Add_ByConst_Assign-8          	1000000000	         0.53 ns/op
+BenchmarkInt64_Add_ByVar_Assign-8            	1000000000	         0.40 ns/op
+BenchmarkInt64_Sub_ByConst_Assign-8          	1000000000	         0.53 ns/op
+BenchmarkInt64_Sub_ByVar_Assign-8            	1000000000	         0.40 ns/op
 BenchmarkInt64_Multi_ByConst_Assign-8        	1000000000	         0.40 ns/op
 BenchmarkInt64_Multi_ByVar_Assign-8          	1000000000	         0.42 ns/op
 BenchmarkInt64_ShiftLeft_ByConst_Assign-8    	1000000000	         0.36 ns/op
 BenchmarkInt64_ShiftLeft_ByVar_Assign-8      	1000000000	         0.92 ns/op
-BenchmarkInt64_ShiftRight_ByConst_Assign-8   	1000000000	         0.36 ns/op
-BenchmarkInt64_ShiftRight_ByVar_Assign-8     	1000000000	         1.45 ns/op
-BenchmarkInt64_Div_ByConst_Assign-8          	1000000000	         0.91 ns/op
-BenchmarkInt64_Div_ByVar_Assign-8            	100000000	         8.31 ns/op
+BenchmarkInt64_ShiftRight_ByConst_Assign-8   	1000000000	         0.37 ns/op
+BenchmarkInt64_ShiftRight_ByVar_Assign-8     	1000000000	         1.44 ns/op
+BenchmarkInt64_Div_ByConst_Assign-8          	1000000000	         0.92 ns/op
+BenchmarkInt64_Div_ByVar_Assign-8            	100000000	         8.53 ns/op
 BenchmarkInt64_Mod_ByConst_Assign-8          	1000000000	         1.04 ns/op
-BenchmarkInt64_Mod_ByVar_Assign-8            	100000000	         8.51 ns/op
-BenchmarkInt64_Assign-8                      	1000000000	         0.28 ns/op
-BenchmarkFloat64_Multi_ByConst_Assign-8      	1000000000	         0.84 ns/op
-BenchmarkFloat64_Multi_ByVar_Assign-8        	1000000000	         0.81 ns/op
-BenchmarkFloat64_ToInt64_Assign-8            	1000000000	         0.54 ns/op
-BenchmarkFloat64_Assign-8                    	1000000000	         0.81 ns/op
+BenchmarkInt64_Mod_ByVar_Assign-8            	100000000	         8.35 ns/op
+BenchmarkInt64_Assign-8                      	1000000000	         0.26 ns/op
+BenchmarkFloat64_Multi_ByConst_Assign-8      	1000000000	         0.79 ns/op
+BenchmarkFloat64_Multi_ByVar_Assign-8        	1000000000	         0.79 ns/op
+BenchmarkFloat64_ToInt64_Assign-8            	1000000000	         0.53 ns/op
+BenchmarkFloat64_Assign-8                    	1000000000	         0.80 ns/op
+BenchmarkInt64Array_Get_Assign-8             	1000000000	         0.26 ns/op
+BenchmarkInt64Slice_Get_Assign-8             	1000000000	         0.52 ns/op
 PASS
-ok  	github.com/openacid/gobenchmark	16.263s
+ok  	github.com/openacid/gobenchmark	17.102s
 ```

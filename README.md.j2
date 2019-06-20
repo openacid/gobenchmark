@@ -28,6 +28,20 @@ go get github.com/openacid/gobenchmark
 make ben # run the benchmark
 ```
 
+# Tips for tuning
+
+According to the benchmark, there are some general tips for tuning computation
+dense programs:
+
+-   Usually using static data is faster:
+    -   **Most of the time**, operating on a const is faster than on a variable.
+    -   Using array is (about 2 times) faster than using a slice.
+
+-   Integer are faster than float number.
+
+-   Usually `/` and `%` are very slow. Use shift if possible.
+
+
 
 # Pre-built benchmarks
 
