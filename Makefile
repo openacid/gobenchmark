@@ -56,7 +56,7 @@ gofmt:
 	@test -z "$(shell gofmt -s -l -d -e $(GOFILES) | tee /dev/stderr)"
 
 ben: test
-	$(GO) test -run=none -bench=. -benchtime 0.5s > benchmark.txt
+	$(GO) test -run=none -bench=. -benchtime 0.5s | awk -f scripts/add_chart.awk > benchmark.txt
 
 gen:
 	$(GO) generate ./...
