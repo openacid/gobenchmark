@@ -1,32 +1,32 @@
 goos: darwin 
 goarch: amd64 
 pkg: github.com/openacid/gobenchmark 
-BenchmarkInt64_And_ByConst_Assign-8                   0.35 ns/op -
-BenchmarkInt64_And_ByVar_Assign-8                     0.40 ns/op --
-BenchmarkInt64_Or_ByConst_Assign-8                    0.36 ns/op -
+BenchmarkInt64_And_ByConst_Assign-8                   0.36 ns/op -
+BenchmarkInt64_And_ByVar_Assign-8                     0.39 ns/op -
+BenchmarkInt64_Or_ByConst_Assign-8                    0.35 ns/op -
 BenchmarkInt64_Or_ByVar_Assign-8                      0.39 ns/op -
 BenchmarkInt64_Xor_ByConst_Assign-8                   0.35 ns/op -
-BenchmarkInt64_Xor_ByVar_Assign-8                     0.39 ns/op -
-BenchmarkInt64_Add_ByConst_Assign-8                   0.51 ns/op --
+BenchmarkInt64_Xor_ByVar_Assign-8                     0.40 ns/op --
+BenchmarkInt64_Add_ByConst_Assign-8                   0.53 ns/op --
 BenchmarkInt64_Add_ByVar_Assign-8                     0.39 ns/op -
 BenchmarkInt64_Sub_ByConst_Assign-8                   0.51 ns/op --
-BenchmarkInt64_Sub_ByVar_Assign-8                     0.40 ns/op --
+BenchmarkInt64_Sub_ByVar_Assign-8                     0.39 ns/op -
 BenchmarkInt64_Multi_ByConst_Assign-8                 0.39 ns/op -
 BenchmarkInt64_Multi_ByVar_Assign-8                   0.41 ns/op --
-BenchmarkInt64_ShiftLeft_ByConst_Assign-8             0.35 ns/op -
+BenchmarkInt64_ShiftLeft_ByConst_Assign-8             0.36 ns/op -
 BenchmarkInt64_ShiftLeft_ByVar_Assign-8               0.92 ns/op ----
 BenchmarkInt64_ShiftRight_ByConst_Assign-8            0.36 ns/op -
-BenchmarkInt64_ShiftRight_ByVar_Assign-8              1.42 ns/op -------
-BenchmarkInt64_Div_ByConst_Assign-8                   0.90 ns/op ----
-BenchmarkInt64_Div_ByVar_Assign-8                     8.21 ns/op -----------------------------------------
-BenchmarkInt64_Mod_ByConst_Assign-8                   1.03 ns/op -----
-BenchmarkInt64_Mod_ByVar_Assign-8                     8.40 ns/op ------------------------------------------
+BenchmarkInt64_ShiftRight_ByVar_Assign-8              1.44 ns/op -------
+BenchmarkInt64_Div_ByConst_Assign-8                   0.91 ns/op ----
+BenchmarkInt64_Div_ByVar_Assign-8                     8.36 ns/op -----------------------------------------
+BenchmarkInt64_Mod_ByConst_Assign-8                   1.05 ns/op -----
+BenchmarkInt64_Mod_ByVar_Assign-8                     8.35 ns/op -----------------------------------------
 BenchmarkInt64_Assign-8                               0.26 ns/op -
 BenchmarkFloat64_Multi_ByConst_Assign-8               0.78 ns/op ---
-BenchmarkFloat64_Multi_ByVar_Assign-8                 0.78 ns/op ---
-BenchmarkFloat64_ToInt64_Assign-8                     0.52 ns/op --
-BenchmarkFloat64_Assign-8                             0.79 ns/op ---
+BenchmarkFloat64_Multi_ByVar_Assign-8                 0.80 ns/op ----
+BenchmarkFloat64_ToInt64_Assign-8                     0.54 ns/op --
+BenchmarkFloat64_Assign-8                             0.78 ns/op ---
 BenchmarkInt64Array_Get_Assign-8                      0.27 ns/op -
-BenchmarkInt64Slice_Get_Assign-8                      0.52 ns/op --
+BenchmarkInt64Slice_Get_Assign-8                      0.54 ns/op --
 PASS 
-ok  	github.com/openacid/gobenchmark6.836s 
+ok  	github.com/openacid/gobenchmark7.019s 
