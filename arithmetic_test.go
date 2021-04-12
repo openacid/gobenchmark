@@ -197,6 +197,22 @@ func BenchmarkFloat64_Multi_ByVar_Assign(b *testing.B) {
 	Output = int(s)
 }
 
+func BenchmarkFloat64_Div_ByConst_Assign(b *testing.B) {
+	var s float64
+	for i := 0; i < b.N; i++ {
+		s += Inp1Float64 / 2.345678
+	}
+	Output = int(s)
+}
+
+func BenchmarkFloat64_Div_ByVar_Assign(b *testing.B) {
+	var s float64
+	for i := 0; i < b.N; i++ {
+		s += Inp1Float64 / Inp2Float64
+	}
+	Output = int(s)
+}
+
 func BenchmarkFloat64_ToInt64_Assign(b *testing.B) {
 	var s int64
 	for i := 0; i < b.N; i++ {
